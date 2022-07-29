@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/fonts/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Soping App</title>
+</head>
+<body>
+    
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-10">
+            <div class="card bg-light shadow">
+                <div class="card-header bg-primary  shadow-sm">
+                    <h1 class="text-center text-white">SHOPING APP</h1>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="customer d-md-flex justify-content-md-between bg-primary align-items-center mb-2">
+                          <h6 class="text-center text-white pt-2 ms-3">CUSTOMER DATIALS
+                            </h6>
+                            <button class="btn btn-primary  pt-2" data-bs-target="#customer_modal" data-bs-toggle="modal"><h6><i class="fas fa-user-plus"></i></i> ADD CUSTOMER</h6></button>
+                        </div>
+                       
+                        
+
+                      </div>
+                    </div>
+                    <div class="row " id="customerId">
+                     
+                    
+                    </div>
+                   
+                    
+                    <div class="">
+                      <div class=" text-center d-md-flex justify-content-between bg-primary mt-3"><h6 class="text-white ms-3 pt-2">PRODUCT LIST</h6><button class="btn btn-primary d-inline-block pt-2 " data-bs-target="#product_modal" data-bs-toggle="modal" type="button"><h6><i class="fas fa-cart-plus"></i>  ADD PRODUCT</h6></button></div>
+                        <table class="table text-center caption-top table-bordered align-center shadow">
+                         
+                            <thead>
+                                <tr class="text-primary ">
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Image</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody id="Product_tr">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer bg-primary">
+                  <h5 class="text-center text-white">Developed by Md.Ashraful Alam</h5>
+                </div>
+                    
+
+<!-- add product button  -->
+
+      
+                </div>
+                <div class="card-footer"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- all modal goes here  -->
+
+
+<!-- customar datial  -->
+<div class="modal fade" id="customer_modal" data-bs-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdrop" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-primary">
+        <h5 class="modal-title text-white" id="staticBackdropLabel">Customer Datials</h5>
+        <button type="button" class="close border-0 rounded-circle h5" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="msg_customer"></div>
+        <form  id="customer_input_form">
+            <div class="my-1">
+                <label for="name"><i class="fa-solid fa-user-plus"></i> Name</label>
+                <input class="form-control" type="text" name="name">
+                <label for="adress"><i class="fa-solid fa-location-plus"></i> Address</label>
+                <input class="form-control" type="text" name="adress">
+                <label for="Mobile"><i class="fa-solid fa-phone-plus"></i> Mobile</label>
+                <input class="form-control" type="number" name="mobile" id="">
+                <label for="date"><i class="fa-solid fa-calendar-plus"></i> Date</label>
+                <input class="form-control" name="date" type="date">
+                <button class="btn btn-primary w-100 mt-3">Add now</button>
+            </div>
+        </form>
+      </div>
+       
+    </div>
+  </div>
+</div>
+
+<!-- upload product  -->
+
+<div class="modal fade" id="product_modal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-primary">
+        <h5 class="modal-title text-white" id="staticBackdropLabel">Upload Products</h5>
+        <button type="button" class="close border-0 rounded-circle h5" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="msg_product"></div>
+        <form id="product_upload_form">
+            <div class="my-1">
+                <label for="name"><i class="fa-solid fa-cart-circle-plus"></i> Name</label>
+                <input class="form-control" type="text" name="name" id="">
+                <label for="image"><i class="fa-solid fa-album-collection-circle-plus"></i> Image</label>
+                <input class="form-control" type="text" name="image" id="">
+                <label for="price"><i class="fa-solid fa-money-bill-1-wave"></i> Price</label>
+                <input class="form-control" type="text" name="price" id="">
+                <label for="quantity"><FontAwesomeIcon icon="fa-solid fa-arrow-up-9-1" /> Quantity</label>
+                <input class="form-control" type="text" name="quantity">
+                <button class="btn btn-primary text-white w-100 mt-3" type="submit"><i class="fa-solid fa-cart-plus"></i> Add Now</button>
+            </div>
+        </form>
+      </div>
+       
+    </div>
+  </div>
+</div>
+
+<!-- view modal  -->
+
+
+<div class="modal fade" id="product_view">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-secondary">
+        <h5 class="modal-title text-white" id="staticBackdropLabel">View Product</h5>
+        <button type="button" class="close rounded-circle h5 border-0" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="card">
+            <div class="card">
+                <div class="card-body" id="view_modal">
+                    
+                </div>
+            </div>
+        </div>
+      </div>
+       
+    </div>
+  </div>
+</div>
+
+
+<!-- edit product  -->
+<div class="modal fade" id="product_edit" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="product_edit" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-primary">
+        <h5 class="modal-title text-white" id="staticBackdropLabel">Edit Product</h5>
+        <button type="button" class="close rounded-circle h5 border-0" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="card">
+          <div class="card-body">
+            <form id="edit_modal">
+              
+            </form>
+          </div>
+        </div>
+        
+      </div>
+       
+    </div>
+  </div>
+</div>
+
+
+
+    <div class="fas fa-edit"></div>
+<script src="./assets/js/function.js"></script>
+<script src="./assets/js/app.js"></script>
+<script src="./assets/js/bootstrap.min.js"></script>
+
+</body>
+</html>
