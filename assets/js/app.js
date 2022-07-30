@@ -15,7 +15,7 @@ const customer_field = () => {
   //  get customer field
   if (!customar_data && customar_data == []) {
     customerId.innerHTML = `<h6 class="text-center">Add new customer</h6>`;
-  }else if (customar_data) {
+  } else if (customar_data) {
     customerId.innerHTML = `  <div class="col-sm-7">
     <h6 id="NoCustomer"></h6>
       <h6  class="my-2 "><i class="fa-solid fa-user text-primary"></i> Name : <span id="customer_name" class="text-secondary">${customar_data.name}</span></h6>
@@ -56,7 +56,7 @@ const product_field = () => {
   let product_data = getProductLsData("product");
   let list = "";
   let total = 0;
-  if (!product_data && product_data == []) {
+  if (!product_data && product_data == "") {
     list = `
         <tr>
         <td colspan='7'>No Product Found</td>
